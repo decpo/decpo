@@ -324,6 +324,11 @@ function loadMarkdownSection(name) {
         .catch(error => console.log(error));
 }
 
+function markSiteReady() {
+    document.body.classList.remove('site-loading');
+    document.body.classList.add('site-ready');
+}
+
 window.addEventListener('DOMContentLoaded', event => {
     marked.use({ mangle: false, headerIds: false });
 
@@ -341,6 +346,7 @@ window.addEventListener('DOMContentLoaded', event => {
             return Promise.all(getConfiguredSections(yml).map(loadMarkdownSection));
         })
         .then(() => typesetMath())
-        .catch(error => console.log(error));
+        .catch(error => console.log(error))
+        .finally(() => markSiteReady());
 
 }); 
