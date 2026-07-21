@@ -2,7 +2,8 @@
 
 
 :root{
-    --h-title-color:#3948d2;
+    --h-title-color:#374151;
+    --bs-blue: #374151;
     --top-section-overlay: 0.52;
     --skeleton-base: #e4e7eb;
     --skeleton-highlight: #f5f7fa;
