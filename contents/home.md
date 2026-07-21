@@ -1,16 +1,16 @@
 
 
-[![senli1073](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/senli1073)
+[![decpo](https://img.shields.io/badge/decpo-github-blue?logo=github)](https://github.com/decpo)
 
-He is currently a Fellow in the Department of Earth and Planetary Sciences (EPS) at Harvard University.
+I am currently an Educational Research and Action Fellow at the University of Notre Dame.
 
 #### Contact
 
-Email: user[at]fas.harvard.edu
+Email: dpope3[at]nd.edu
 
 #### Education
-M.E., Computer Science and Technology, China University of Mining and Technology, 2022—2025.\
-B.E., Data Science and Big Data Technology, China University of Mining and Technology, 2018—2022.
+M.A.T., in French, Indiana University Bloomington, 2022—2025.\
+B.A., French and Linguistics, Indiana University Bloomington, 2018—2022.
 
 #### Research Interests
-Machine Learning for Seismology; Foundation Model; Observational Seismology; Microseismic Monitoring
+Broadly, I'm interested in how we comprehend language. My current research sits at the intersection of psycholinguistics and cognitive psychology, focusing on the cognitive mechanisms that underpin real-time sentence processing. Specifically, I investigate how individual differences in working memory capacity (WMC) influence how we process language incrementally.

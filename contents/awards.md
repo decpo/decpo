@@ -1,12 +1,10 @@
 
-- Outstanding Graduate Award (CUMT), 2025.
+- Marjorie and Francis Gravit Summer Fellowship [$2,000]                                  2023       
+  Department of French and Italian, Indiana University Bloomington
+- Robert J. Glushko Research Excellence Award for Outstanding Poster Presentation		  2022
+Midwest Undergraduate Cognitive Science Conference
+- Foreign Language and Area Studies Fellowship [$15,000]					              2021
+  United States Department of Education
+- Advanced Summer Research Scholarship [$2,000]                                           2021      
+  Indiana University Office of Undergraduate Research
 
-- National Scholarship for Graduate Students (Ministry of Education, China), 2024.
-
-- First-Prize Graduate Academic Scholarship (CUMT), 2023 & 2024.
-
-- Outstanding Undergraduate Thesis Award (Jiangsu, China), 2022.
-
-- First-Prize Corporate Scholarship (CUMT), 2020.
-
-- First-Prize Undergraduate Academic Scholarship (CUMT), 2019.
