@@ -37,55 +37,98 @@
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
 
     <!-- Dark Mode CSS Overrides -->
+ <!-- Dark Mode CSS Overrides -->
     <style>
         [data-theme="dark"] {
             --bs-body-bg: #121212;
-            --bs-body-color: #e0e0e0;
+            --bs-body-color: #f0f0f0;
             color-scheme: dark;
         }
 
-        [data-theme="dark"] body {
-            background-color: #121212 !important;
-            color: #e0e0e0 !important;
-        }
-
+        /* 1. Force dark backgrounds on the page wrapper, main area, and ALL sections */
+        [data-theme="dark"],
+        [data-theme="dark"] body,
+        [data-theme="dark"] main,
+        [data-theme="dark"] section,
+        [data-theme="dark"] .section,
         [data-theme="dark"] .bg-light,
-        [data-theme="dark"] .skeleton-section-light {
-            background-color: #1e1e1e !important;
-            color: #e0e0e0 !important;
+        [data-theme="dark"] .bg-white,
+        [data-theme="dark"] .bg-gray,
+        [data-theme="dark"] .skeleton-section,
+        [data-theme="dark"] .skeleton-section-light,
+        [data-theme="dark"] .skeleton-section-gray {
+            background-color: #121212 !important;
+            color: #f0f0f0 !important;
         }
 
+        /* 2. Alternating subtle dark shades for section contrast */
+        [data-theme="dark"] section:nth-of-type(even),
         [data-theme="dark"] .bg-gray,
         [data-theme="dark"] .skeleton-section-gray {
-            background-color: #282828 !important;
-            color: #e0e0e0 !important;
-        }
-
-        [data-theme="dark"] .header.navbar {
             background-color: #1a1a1a !important;
-            border-bottom: 1px solid #333;
         }
 
-        [data-theme="dark"] .navbar-light .navbar-nav .nav-link,
-        [data-theme="dark"] .navbar-brand {
-            color: #e0e0e0 !important;
-        }
-
-        [data-theme="dark"] .card {
+        /* 3. Cards, Modals, and Box Containers */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .list-group-item,
+        [data-theme="dark"] .modal-content,
+        [data-theme="dark"] .dropdown-menu {
             background-color: #1e1e1e !important;
-            color: #e0e0e0 !important;
+            color: #f0f0f0 !important;
             border-color: #333333 !important;
         }
 
-        [data-theme="dark"] .text-muted {
-            color: #a0a0a0 !important;
+        /* 4. High-Contrast Text Overrides */
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6,
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] li,
+        [data-theme="dark"] div,
+        [data-theme="dark"] .text-dark,
+        [data-theme="dark"] .text-body,
+        [data-theme="dark"] .text-black {
+            color: #f0f0f0 !important;
         }
 
+        [data-theme="dark"] .text-muted,
+        [data-theme="dark"] .text-secondary {
+            color: #b3b3b3 !important;
+        }
+
+        /* 5. Links & Accent Colors */
         [data-theme="dark"] a {
-            color: #6ea8fe;
+            color: #79b8ff !important;
         }
 
-        /* Toggle Button Styles */
+        [data-theme="dark"] a:hover {
+            color: #a5d6ff !important;
+        }
+
+        /* 6. Navigation Bar */
+        [data-theme="dark"] #mainNav,
+        [data-theme="dark"] .header.navbar {
+            background-color: #181818 !important;
+            border-bottom: 1px solid #2d2d2d !important;
+        }
+
+        [data-theme="dark"] #mainNav .nav-link,
+        [data-theme="dark"] #mainNav .navbar-brand {
+            color: #ffffff !important;
+        }
+
+        /* 7. MathJax Equation Formatting */
+        [data-theme="dark"] .mjx-chtml,
+        [data-theme="dark"] MathJax svg {
+            fill: #f0f0f0 !important;
+            color: #f0f0f0 !important;
+        }
+
+        /* 8. Toggle Button Styling */
         .theme-toggle-btn {
             background: transparent;
             border: none;
