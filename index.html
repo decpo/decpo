@@ -19,7 +19,6 @@
                 document.documentElement.setAttribute('data-theme', 'light');
             }
         })();
-    <!-- Darkmode Invert -->
     </script>
 
     <!-- Icon -->
@@ -37,51 +36,20 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
 
-  <!-- Dark Mode CSS Overrides and Minimalist Header-->
+    <!-- Theme Toggle Button Minimal Styling -->
     <style>
-        /* 1. Global Inversion: Flips the whole page to dark mode at the rendering layer */
-        html[data-theme="dark"] {
-            /* Invert lightness by 92% and rotate colors 180 degrees to keep links blueish */
-            filter: invert(0.92) hue-rotate(180deg);
-            /* Force a white base so the inversion always turns out dark gray/black */
-            background-color: #ffffff !important; 
-        }
-
-        /* 2. Double-Invert Media: Flips images and backgrounds back to normal */
-        html[data-theme="dark"] img,
-        html[data-theme="dark"] video,
-        html[data-theme="dark"] iframe,
-        html[data-theme="dark"] canvas,
-        html[data-theme="dark"] .top-section-bg,
-        html[data-theme="dark"] .top-section-bg-active {
-            filter: invert(1.08) hue-rotate(180deg);
-        }
-        /* Hide Banner Background Images & Use Solid Color */
-        .top-section-bg {
-            display: none !important;
-        }
-
-        .top-section {
-            background-color: #212529 !important; /* Dark slate background for light mode */
-        }
-
-        html[data-theme="dark"] .top-section {
-            background-color: #ececec !important; /* Inverts to dark slate (#131313) in dark mode */
-        }
-        /* 3. Toggle Button Styling */
         .theme-toggle-btn {
             background: transparent;
             border: none;
-            color: #6c757d;
+            color: var(--text-main);
             font-size: 1.2rem;
             padding: 0.25rem 0.5rem;
             cursor: pointer;
             transition: color 0.2s ease;
         }
 
-        /* 4. Button Color adjustment (Set to blue so it inverts to gold/yellow) */
-        html[data-theme="dark"] .theme-toggle-btn {
-            color: #003ef8; 
+        .theme-toggle-btn:hover {
+            color: var(--accent-color);
         }
     </style>
 
@@ -157,10 +125,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 
-                <!-- Dynamic Items (Notice I removed me-4 so it sits flush with the Projects link) -->
+                <!-- Dynamic Items -->
                 <ul id="navbar-items" class="navbar-nav ms-auto my-3 my-lg-0"></ul>
                 
-                <!-- Static Projects Link (Formatted identically to the dynamic links) -->
+                <!-- Static Projects Link -->
                 <ul class="navbar-nav me-4 my-3 my-lg-0">
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="projects.html">PROJECTS</a>
