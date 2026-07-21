@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Projects</title>
+
+    <!-- Immediate Theme Check Script -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <!-- Fonts and CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    <link type="text/css" href="static/css/main.css" rel="stylesheet" />
+
+    <!-- Dark Mode CSS Overrides -->
+    <style>
+        html[data-theme="dark"] {
+            filter: invert(0.92) hue-rotate(180deg);
+            background-color: #ffffff !important; 
+        }
+        html[data-theme="dark"] img,
+        html[data-theme="dark"] video,
+        html[data-theme="dark"] iframe,
+        html[data-theme="dark"] canvas,
+        html[data-theme="dark"] .top-section-bg {
+            filter: invert(1.08) hue-rotate(180deg);
+        }
+        .theme-toggle-btn {
+            background: transparent; border: none; color: #6c757d;
+            font-size: 1.2rem; padding: 0.25rem 0.5rem; cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        html[data-theme="dark"] .theme-toggle-btn { color: #003ef8; }
+        
+        /* Push content down so it isn't hidden behind the fixed navbar */
+        .page-content { padding-top: 100px; padding-bottom: 50px; }
+    </style>
+
+    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation-->
+    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="index.html">My Name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                MENU <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="projects.html">Projects</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle-btn ms-lg-2" aria-label="Toggle Dark Mode">
+                    <i id="theme-icon" class="bi bi-moon-stars-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container page-content px-5">
+        <h1 class="display-5 fw-bold mb-5">My Projects</h1>
+        
+        <div class="row gx-5">
+            <!-- Project 1 -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="card-title h4">Project Name 1</h3>
+                        <p class="card-text text-muted">A brief description of what this project is, the tech stack used, and what problem it solves.</p>
+                        <a href="#" class="text-decoration-none">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="card-title h4">Project Name 2</h3>
+                        <p class="card-text text-muted">A brief description of what this project is, the tech stack used, and what problem it solves.</p>
+                        <a href="#" class="text-decoration-none">View Publication →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+        }
+
+        const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateThemeIcon(activeTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+            updateThemeIcon(nextTheme);
+        });
+    </script>
+</body>
+</html>
