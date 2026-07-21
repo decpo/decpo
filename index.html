@@ -19,6 +19,7 @@
                 document.documentElement.setAttribute('data-theme', 'light');
             }
         })();
+    <!-- Darkmode Invert -->
     </script>
 
     <!-- Icon -->
@@ -36,99 +37,27 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
 
-    <!-- Dark Mode CSS Overrides -->
- <!-- Dark Mode CSS Overrides -->
+  <!-- Dark Mode CSS Overrides -->
     <style>
-        [data-theme="dark"] {
-            --bs-body-bg: #121212;
-            --bs-body-color: #f0f0f0;
-            color-scheme: dark;
+        /* 1. Global Inversion: Flips the whole page to dark mode at the rendering layer */
+        html[data-theme="dark"] {
+            /* Invert lightness by 92% and rotate colors 180 degrees to keep links blueish */
+            filter: invert(0.92) hue-rotate(180deg);
+            /* Force a white base so the inversion always turns out dark gray/black */
+            background-color: #ffffff !important; 
         }
 
-        /* 1. Force dark backgrounds on the page wrapper, main area, and ALL sections */
-        [data-theme="dark"],
-        [data-theme="dark"] body,
-        [data-theme="dark"] main,
-        [data-theme="dark"] section,
-        [data-theme="dark"] .section,
-        [data-theme="dark"] .bg-light,
-        [data-theme="dark"] .bg-white,
-        [data-theme="dark"] .bg-gray,
-        [data-theme="dark"] .skeleton-section,
-        [data-theme="dark"] .skeleton-section-light,
-        [data-theme="dark"] .skeleton-section-gray {
-            background-color: #121212 !important;
-            color: #f0f0f0 !important;
+        /* 2. Double-Invert Media: Flips images and backgrounds back to normal */
+        html[data-theme="dark"] img,
+        html[data-theme="dark"] video,
+        html[data-theme="dark"] iframe,
+        html[data-theme="dark"] canvas,
+        html[data-theme="dark"] .top-section-bg,
+        html[data-theme="dark"] .top-section-bg-active {
+            filter: invert(1.08) hue-rotate(180deg);
         }
 
-        /* 2. Alternating subtle dark shades for section contrast */
-        [data-theme="dark"] section:nth-of-type(even),
-        [data-theme="dark"] .bg-gray,
-        [data-theme="dark"] .skeleton-section-gray {
-            background-color: #1a1a1a !important;
-        }
-
-        /* 3. Cards, Modals, and Box Containers */
-        [data-theme="dark"] .card,
-        [data-theme="dark"] .list-group-item,
-        [data-theme="dark"] .modal-content,
-        [data-theme="dark"] .dropdown-menu {
-            background-color: #1e1e1e !important;
-            color: #f0f0f0 !important;
-            border-color: #333333 !important;
-        }
-
-        /* 4. High-Contrast Text Overrides */
-        [data-theme="dark"] h1,
-        [data-theme="dark"] h2,
-        [data-theme="dark"] h3,
-        [data-theme="dark"] h4,
-        [data-theme="dark"] h5,
-        [data-theme="dark"] h6,
-        [data-theme="dark"] p,
-        [data-theme="dark"] span,
-        [data-theme="dark"] li,
-        [data-theme="dark"] div,
-        [data-theme="dark"] .text-dark,
-        [data-theme="dark"] .text-body,
-        [data-theme="dark"] .text-black {
-            color: #f0f0f0 !important;
-        }
-
-        [data-theme="dark"] .text-muted,
-        [data-theme="dark"] .text-secondary {
-            color: #b3b3b3 !important;
-        }
-
-        /* 5. Links & Accent Colors */
-        [data-theme="dark"] a {
-            color: #79b8ff !important;
-        }
-
-        [data-theme="dark"] a:hover {
-            color: #a5d6ff !important;
-        }
-
-        /* 6. Navigation Bar */
-        [data-theme="dark"] #mainNav,
-        [data-theme="dark"] .header.navbar {
-            background-color: #181818 !important;
-            border-bottom: 1px solid #2d2d2d !important;
-        }
-
-        [data-theme="dark"] #mainNav .nav-link,
-        [data-theme="dark"] #mainNav .navbar-brand {
-            color: #ffffff !important;
-        }
-
-        /* 7. MathJax Equation Formatting */
-        [data-theme="dark"] .mjx-chtml,
-        [data-theme="dark"] MathJax svg {
-            fill: #f0f0f0 !important;
-            color: #f0f0f0 !important;
-        }
-
-        /* 8. Toggle Button Styling */
+        /* 3. Toggle Button Styling */
         .theme-toggle-btn {
             background: transparent;
             border: none;
@@ -139,8 +68,9 @@
             transition: color 0.2s ease;
         }
 
-        [data-theme="dark"] .theme-toggle-btn {
-            color: #ffc107;
+        /* 4. Button Color adjustment (Set to blue so it inverts to gold/yellow) */
+        html[data-theme="dark"] .theme-toggle-btn {
+            color: #003ef8; 
         }
     </style>
 
