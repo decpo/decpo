@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Assessing Methodological Reliability in the A-Maze Paradigm - Decker Pope</title>
+
+    <!-- Immediate Theme Check Script -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <!-- Icon & Fonts -->
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <!-- Core Stylesheet -->
+    <link type="text/css" href="static/css/main.css" rel="stylesheet" />
+
+    <style>
+        .theme-toggle-btn {
+            background: transparent; border: none; color: var(--text-main);
+            font-size: 1.2rem; padding: 0.25rem 0.5rem; cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .theme-toggle-btn:hover { color: var(--accent-color); }
+    </style>
+
+    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation-->
+    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="index.html">Decker Pope</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                MENU <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="index.html">HOME</a></li>
+                </ul>
+                <ul class="navbar-nav me-4 my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link me-lg-3 fw-bold" href="projects.html">PROJECTS</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle-btn ms-lg-2" aria-label="Toggle Dark Mode">
+                    <i id="theme-icon" class="bi bi-moon-stars-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container px-5 py-4" style="max-width: 850px;">
+        <!-- Breadcrumb Back Link -->
+        <div class="mb-3">
+            <a href="projects.html" class="text-decoration-none fw-bold">← Back to Projects</a>
+        </div>
+
+        <header class="mb-4">
+            <h1 class="fw-bold">Assessing Methodological Reliability in the A-Maze Paradigm</h1>
+            <p class="text-muted">Research Area: Psycholinguistics / Sentence Processing</p>
+        </header>
+
+        <hr class="my-4" style="border-color: var(--border-color);">
+
+        <!-- Section 1: Overview -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-3">Overview</h3>
+            <p>
+                This project examines the reliability of observing locality effects of long-distance dependencies using the A-maze paradigm. The Maze paradigm has been proposed as an alternative to self-paced reading and eye-tracking paradigms in sentence processing research because it forces an incremental, word-by-word lexical decision process at every step, preventing readers from skipping words, regressing, or employing reading strategies that often obscure real-time processing difficulty in traditional methods.
+            </p>
+        </section>
+
+        <!-- Section 2: Methodology -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-3">Methodology</h3>
+            <p>
+                In progress...
+            </p>
+        </section>
+
+        <!-- Section 3: Links & Resources -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-3">Resources & Links</h3>
+            <ul>
+                <li><a href="https://github.com/decpo" target="_blank">GitHub Repository</a></li>
+                <li><a href="#" target="_blank">Pre-registration / OSF Link</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bottom text-center py-4 mt-5">
+        <div class="container px-5">
+            <div class="text-muted small">
+                <a href="https://github.com/decpo">GitHub</a>
+                <span class="mx-1">&middot;</span>
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+        }
+
+        const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateThemeIcon(activeTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+            updateThemeIcon(nextTheme);
+        });
+    </script>
+</body>
+</html>
