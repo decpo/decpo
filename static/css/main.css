@@ -1,23 +1,123 @@
 @import "./styles.css";
 
+/* ==========================================
+   NATIVE THEME VARIABLES & ACCENT COLORS
+   ========================================== */
+:root {
+    /* 1. YOUR BRAND ACCENT COLOR (Change this single hex code to whatever color you want) */
+    --accent-color: #059669; /* E.g., Emerald Green (#059669), Navy (#1e3a8a), Steel Blue (#2563eb) */
 
-:root{
-    --h-title-color:#374151;
-    --bs-blue: #374151;
+    /* 2. Light Mode Palettes */
+    --bg-main: #ffffff;
+    --bg-top-section: #f1f5f9; /* Soft, clean slate top banner for light mode */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+
+    --h-title-color: var(--accent-color);
     --top-section-overlay: 0.52;
     --skeleton-base: #e4e7eb;
     --skeleton-highlight: #f5f7fa;
 }
 
-body {
-    background: #ffffff;
+/* 3. Native Dark Mode Palettes (No filter inversion!) */
+html[data-theme="dark"] {
+    --bg-main: #0f172a;          /* Deep rich slate background */
+    --bg-top-section: #1e293b;  /* Matching dark header block */
+    --text-main: #f8fafc;       /* Crisp, readable white text */
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --accent-color: #10b981;    /* Brightened accent color for optimal contrast on dark backgrounds */
 }
 
+/* ==========================================
+   GLOBAL NATIVE STYLES
+   ========================================== */
+body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Header & Navigation Bar */
 .header {
-    border-bottom: solid 2px var(--bs-blue);
+    background-color: var(--bg-main) !important;
+    border-bottom: solid 2px var(--accent-color) !important;
     z-index: 10000;
 }
 
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-brand {
+    color: var(--text-main) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-brand:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Top Banner Section (Fixes the weird grey box) */
+.top-section {
+    position: relative;
+    padding: 10rem 0;
+    height: 25rem;
+    overflow: hidden;
+    background-color: var(--bg-top-section) !important;
+}
+
+/* Hide background banner images for the minimalist look */
+.top-section-bg {
+    display: none !important;
+}
+
+.top-section:before {
+    display: none !important; /* Removes default dark gradient overlay */
+}
+
+/* Section Headings & Text Accent Colors */
+section header h2,
+#sections h2,
+.text-primary,
+a,
+.bi {
+    color: var(--accent-color) !important;
+}
+
+/* Force Bootstrap Utility Classes to match Dark Mode */
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-light,
+html[data-theme="dark"] .card {
+    background-color: var(--bg-top-section) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+html[data-theme="dark"] .text-dark {
+    color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Avatar Position */
+#avatar {
+    position: relative;
+    height: 0;
+    top: min(-65px, max(-100px, calc(-1 * 100vw / 12)));
+    max-width: 55em;
+    margin: 0 1.5rem 0 0;
+    float: right;
+    z-index: 9000;
+}
+
+#avatar img {
+    width: min(180px, max(130px, calc(100vw / 6)));
+    height: auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Skeleton Loading Screen */
 .page-skeleton {
     position: fixed;
     top: 25rem;
@@ -26,7 +126,7 @@ body {
     left: 0;
     z-index: 8000;
     overflow: auto;
-    background: #ffffff;
+    background: var(--bg-main);
     opacity: 1;
     visibility: visible;
     pointer-events: none;
@@ -40,216 +140,7 @@ body {
     pointer-events: none;
 }
 
-.skeleton-block {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    border-radius: 4px;
-    background: var(--skeleton-base);
-}
-
-.skeleton-block::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    transform: translateX(-100%);
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.58), transparent);
-    animation: skeleton-shimmer 1450ms ease-in-out infinite;
-}
-
-.skeleton-section {
-    padding: 4rem 0;
-}
-
-.skeleton-section-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff);
-}
-
-.skeleton-section-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1);
-}
-
-.skeleton-section-title {
-    width: 42%;
-    height: 2rem;
-    margin-bottom: 2rem;
-}
-
-.skeleton-line {
-    height: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.skeleton-line-long {
-    width: 100%;
-}
-
-.skeleton-line:not(.skeleton-line-long):not(.skeleton-line-short) {
-    width: 88%;
-}
-
-.skeleton-line-short {
-    width: 68%;
-}
-
-@keyframes skeleton-shimmer {
-    100% {
-        transform: translateX(100%);
-    }
-}
-
 .bg-bottom {
-    background-color: var(--h-title-color);
-}
-
-.top-section {
-    position: relative;
-    padding: 10rem 0;
-    height: 25rem;
-    overflow: hidden;
-    background-color: #18202a;
-}
-
-.site-loading .top-section {
-    background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(231, 235, 240, 0.16)),
-        linear-gradient(135deg, #edf0f3, #f8f9fb);
-}
-
-.top-section h2 {
-    font-weight: 400;
-}
-
-.top-section .top-section-content {
-    position: relative;
-    z-index: 2;
-}
-
-.top-section-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-position: center;
-    background-size: cover;
-    opacity: 0;
-    transform: scale(1.03);
-    transition: opacity 1200ms ease, transform 7000ms ease;
-}
-
-.top-section-bg-active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.top-section:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background:
-        linear-gradient(90deg, rgba(0, 0, 0, calc(var(--top-section-overlay) + 0.12)), rgba(0, 0, 0, var(--top-section-overlay))),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.36));
-}
-
-.site-loading .top-section:before {
-    background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.24), rgba(222, 227, 234, 0.2)),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(222, 227, 234, 0.16));
-}
-
-.site-loading .top-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    transform: translateX(-100%);
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: skeleton-shimmer 1450ms ease-in-out infinite;
-}
-
-section header h2{
-    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    color: var(--h-title-color);
-    font-size: 2.3rem;
-    line-height: 4rem;
-}
-
-section .main-body{
-    font-size: 1.3rem;
-    font-weight: 200;
-    line-height: 2.4rem;
-}
-
-
-.bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
-}
-
-.bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
-}
-
-
-
-.on-top {
-    position: relative;
-    z-index: 10000;
-}
-
-.top-bg {
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.top-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-
-#avatar {
-    position: relative;
-    height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
-    max-width: 55em;
-    margin: 0 1.5rem 0 0;
-    float: right;
-    z-index: 9000;
-}
-
-#avatar img {
-    width: min(180px, max(130px, calc(100vw / 6)));
-    height: auto;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (max-width: 991px) {
-    #avatar {
-        margin: 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .top-section-bg {
-        transition: none;
-        transform: none;
-    }
-
-    .page-skeleton {
-        transition: none;
-    }
-
-    .skeleton-block::after {
-        animation: none;
-    }
+    background-color: var(--bg-top-section) !important;
+    border-top: 1px solid var(--border-color);
 }
