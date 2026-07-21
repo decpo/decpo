@@ -37,7 +37,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
 
-  <!-- Dark Mode CSS Overrides -->
+  <!-- Dark Mode CSS Overrides and Minimalist Header-->
     <style>
         /* 1. Global Inversion: Flips the whole page to dark mode at the rendering layer */
         html[data-theme="dark"] {
@@ -56,7 +56,18 @@
         html[data-theme="dark"] .top-section-bg-active {
             filter: invert(1.08) hue-rotate(180deg);
         }
+        /* Hide Banner Background Images & Use Solid Color */
+        .top-section-bg {
+            display: none !important;
+        }
 
+        .top-section {
+            background-color: #212529 !important; /* Dark slate background for light mode */
+        }
+
+        html[data-theme="dark"] .top-section {
+            background-color: #ececec !important; /* Inverts to dark slate (#131313) in dark mode */
+        }
         /* 3. Toggle Button Styling */
         .theme-toggle-btn {
             background: transparent;
