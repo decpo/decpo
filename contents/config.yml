@@ -1,6 +1,6 @@
 title: Decker Pope's Homepage
 page-top-title: Decker Pope
-top-section-bg-text: Language and Brain
+top-section-bg-text: 
 backgrounds:
   - static/assets/background/background_0.jpeg
   - static/assets/background/background_1.jpeg
@@ -16,7 +16,7 @@ license-link:
 sections:
   - id: home
     nav: HOME
-    title: User Name&ensp;|&ensp;姓名
+    title: Decker Pope
     href: '#page-top' # Default to '#<id>' if not specified
   - id: publications
     nav: PUBLICATIONS
