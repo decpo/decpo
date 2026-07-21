@@ -5,7 +5,7 @@
    ========================================== */
 :root {
     /* Brand Accent Color */
-    --accent-color: #059669; /* E.g., Emerald (#059669), Navy (#1e3a8a), Steel Blue (#2563eb) */
+    --accent-color: ##B95835; 
 
     /* Light Mode Palettes */
     --bg-main: #ffffff;
@@ -23,14 +23,14 @@
 
 /* Dark Mode Palettes */
 html[data-theme="dark"] {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --bg-secondary-light: #0f172a;
-    --bg-secondary-gray: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --accent-color: #10b981;
+    --bg-main: #1F1E1E;
+    --bg-card: #2B2A2A;
+    --bg-secondary-light: #1F1E1E;
+    --bg-secondary-gray: #2B2A2A;
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --border-color: #3B3A3A;
+    --accent-color: #B95835;
 }
 
 /* ==========================================
