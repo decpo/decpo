@@ -145,12 +145,14 @@
                 <i class="bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul id="navbar-items" class="navbar-nav ms-auto me-4 my-3 my-lg-0"></ul>
                 
-                <!-- NEW: Hardcoded link to the projects page -->
-                <ul class="navbar-nav">
+                <!-- Dynamic Items (Notice I removed me-4 so it sits flush with the Projects link) -->
+                <ul id="navbar-items" class="navbar-nav ms-auto my-3 my-lg-0"></ul>
+                
+                <!-- Static Projects Link (Formatted identically to the dynamic links) -->
+                <ul class="navbar-nav me-4 my-3 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3 fw-bold" href="projects.html">Projects</a>
+                        <a class="nav-link me-lg-3" href="projects.html">Projects</a>
                     </li>
                 </ul>
 
