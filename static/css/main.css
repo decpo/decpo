@@ -5,7 +5,7 @@
    ========================================== */
 :root {
     /* Brand Accent Color */
-    --accent-color: ##B95835; 
+    --accent-color: #8c2c19; 
 
     /* Light Mode Palettes */
     --bg-main: #ffffff;
@@ -30,7 +30,7 @@ html[data-theme="dark"] {
     --text-main: #F3F4F6;
     --text-muted: #9CA3AF;
     --border-color: #3B3A3A;
-    --accent-color: #B95835;
+    --accent-color: #8c2c19;
 }
 
 /* ==========================================
