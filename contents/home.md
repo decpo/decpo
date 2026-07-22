@@ -3,7 +3,7 @@
 </a>
 
 <a href="https://orcid.org/0009-0000-6680-2565" class="btn btn-outline-dark btn-sm">
-  <i class="ai ai-ORCID"></i> ORCID
+  <i class="ai ai-orcid"></i> ORCID
 </a>
 
 I am currently an Educational Research and Action Fellow at the University of Notre Dame.
