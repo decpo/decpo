@@ -13,14 +13,15 @@ I am currently an Educational Research and Action Fellow at the University of No
   <i class="fa-regular fa-envelope"></i> Email
 </a>
 
+
 #### Education
 M.A.T., in French, Indiana University Bloomington, 2022—2024.\
 B.A., French and Linguistics, Indiana University Bloomington, 2018—2022.
 
 #### Research Interests
 <ul>
-  <li><strong>Sentence Processing:</strong> Real-time syntactic parsing, structural ambiguity, and incremental comprehension.</li>
-  <li><strong>Working Memory:</strong> Memory capacity constraints and cognitive architecture during language understanding.</li>
-  <li><strong>Individual Differences:</strong> How cognitive variations shape language processing across individuals.</li>
-  <li><strong>Neurolinguistics:</strong> Neural correlates and brain-based dynamics of sentence-level processing.</li>
+  <li class="mb3"><strong>Sentence Processing:</strong> Real-time syntactic parsing, structural ambiguity, and incremental comprehension.</li>
+  <li class="mb3"><strong>Working Memory:</strong> Memory capacity constraints and cognitive architecture during language understanding.</li>
+  <li class="mb3"><strong>Individual Differences:</strong> How cognitive variations shape language processing across individuals.</li>
+  <li class="mb3"><strong>Neurolinguistics:</strong> Neural correlates and brain-based dynamics of sentence-level processing.</li>
 </ul>
