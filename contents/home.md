@@ -18,6 +18,9 @@ M.A.T., in French, Indiana University Bloomington, 2022—2024.\
 B.A., French and Linguistics, Indiana University Bloomington, 2018—2022.
 
 #### Research Interests
-<b>Sentence Processing</b>: Real-time syntactic parsing, structural ambiguity, and real-time comprehension dynamics.\
-<b>Working Memory & Individual Differences</b>: How memory capacity variations constrain or facilitate incremental language processing.\
-<b>Neurolinguistics</b>: Neural correlates and brain-based dynamics of sentence-level processing.
+<ul>
+  <li><strong>Sentence Processing:</strong> Real-time syntactic parsing, structural ambiguity, and incremental comprehension.</li>
+  <li><strong>Working Memory:</strong> Memory capacity constraints and cognitive architecture during language understanding.</li>
+  <li><strong>Individual Differences:</strong> How cognitive variations shape language processing across individuals.</li>
+  <li><strong>Neurolinguistics:</strong> Neural correlates and brain-based dynamics of sentence-level processing.</li>
+</ul>
