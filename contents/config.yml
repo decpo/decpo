@@ -15,7 +15,7 @@ license-link:
 sections:
   - id: home
     nav: HOME
-    title: Decker Pope
+    title: D.P.
     href: '#page-top' # Default to '#<id>' if not specified
   - id: publications
     nav: PUBLICATIONS
