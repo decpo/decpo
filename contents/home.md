@@ -1,6 +1,5 @@
-
-
-[![decpo](https://img.shields.io/badge/decpo-github-blue?logo=github)](https://github.com/decpo)
+<!-- Google Scholar -->
+<a href="https://scholar.google.com/citations?user=7golzMUAAAAJ&hl=en"><i class="ai ai-google-scholar"></i> Google Scholar</a>
 
 I am currently an Educational Research and Action Fellow at the University of Notre Dame.
 
