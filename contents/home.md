@@ -9,10 +9,7 @@
 I am currently an Educational Research and Action Fellow at the University of Notre Dame. My work focuses on how working memory capacity and individual differences shape real-time sentence processing, alongside a broader interest in neurolinguistics.
 
 #### Contact
-<a href="mailto:dpope3@nd.edu" class="btn btn-outline-dark btn-md">
-  <i class="fa-regular fa-envelope"></i> Email
-</a>
-
+dpope3[at]nd.edu
 
 #### Education
 M.A.T., in French, Indiana University Bloomington, 2022—2024.\
