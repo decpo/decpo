@@ -78,7 +78,36 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
+/* Style for academic icon buttons */
+.academic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;                  /* Space between icon and text */
+  padding: 5px 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #333333;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;        /* Slightly rounded corners */
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-right: 6px;
+  margin-bottom: 8px;
+}
 
+/* Hover effect */
+.academic-btn:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+  color: #0d6efd;            /* Accent color on hover */
+  text-decoration: none;
+}
+
+/* Icon sizing tweak */
+.academic-btn i {
+  font-size: 1.1em;
+}
 *,
 *::before,
 *::after {
