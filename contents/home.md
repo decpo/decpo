@@ -1,8 +1,8 @@
-<a href="https://scholar.google.com/citations?user=7golzMUAAAAJ&hl=en" class="btn btn-outline-dark btn-sm">
+<a href="https://scholar.google.com/citations?user=7golzMUAAAAJ&hl=en" class="btn btn-outline-dark btn-lg">
   <i class="ai ai-google-scholar"></i> Google Scholar
 </a>
 
-<a href="https://orcid.org/0009-0000-6680-2565" class="btn btn-outline-dark btn-sm">
+<a href="https://orcid.org/0009-0000-6680-2565" class="btn btn-outline-dark btn-lg">
   <i class="ai ai-orcid"></i> ORCID
 </a>
 
