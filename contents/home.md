@@ -1,5 +1,11 @@
-<!-- Google Scholar -->
-<a href="https://scholar.google.com/citations?user=7golzMUAAAAJ&hl=en"><i class="ai ai-google-scholar"></i> Google Scholar</a>
+<div class="button-group">
+  <a href="https://scholar.google.com/citations?user=7golzMUAAAAJ&hl=en" class="academic-btn">
+    <i class="ai ai-google-scholar"></i> Google Scholar
+  </a>
+  <a href="https://orcid.org/0009-0000-6680-2565" class="academic-btn">
+    <i class="ai ai-orcid"></i> ORCID
+  </a>
+</div>
 
 I am currently an Educational Research and Action Fellow at the University of Notre Dame.
 
