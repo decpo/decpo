@@ -6,15 +6,18 @@
   <i class="ai ai-orcid"></i> ORCID
 </a>
 
-I am currently an Educational Research and Action Fellow at the University of Notre Dame.
+I am currently an Educational Research and Action Fellow at the University of Notre Dame. My work focuses on how working memory capacity and individual differences shape real-time sentence processing, alongside a broader interest in neurolinguistics.
 
 #### Contact
-
-Email: dpope3[at]nd.edu
+<a href="mailto:dpope3@nd.edu" class="btn btn-outline-dark btn-md">
+  <i class="fa-regular fa-envelope"></i> Email
+</a>
 
 #### Education
 M.A.T., in French, Indiana University Bloomington, 2022—2024.\
 B.A., French and Linguistics, Indiana University Bloomington, 2018—2022.
 
 #### Research Interests
-Broadly, I'm interested in how we comprehend language. My current research sits at the intersection of psycholinguistics and cognitive psychology, focusing on the cognitive mechanisms that underpin real-time sentence processing. Specifically, I investigate how individual differences in working memory capacity (WMC) influence how we process language incrementally.
+<b>Sentence Processing</b>: Real-time syntactic parsing, structural ambiguity, and real-time comprehension dynamics.
+<b>Working Memory & Individual Differences</b>: How memory capacity variations constrain or facilitate incremental language processing.
+<b>Neurolinguistics</b>: Neural correlates and brain-based dynamics of sentence-level processing.
