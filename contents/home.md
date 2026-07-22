@@ -9,7 +9,7 @@ I am currently an Educational Research and Action Fellow at the University of No
 Email: dpope3[at]nd.edu
 
 #### Education
-M.A.T., in French, Indiana University Bloomington, 2022—2025.\
+M.A.T., in French, Indiana University Bloomington, 2022—2024.\
 B.A., French and Linguistics, Indiana University Bloomington, 2018—2022.
 
 #### Research Interests
