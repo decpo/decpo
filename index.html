@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decker M. Pope</title>
+    <!-- Modern Sans-serif Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Chart.js for Visual Trajectory -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar / Bio Header -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="assets/profile.jpg" alt="Alex Mercer" class="avatar" id="avatar-img">
+                <h1>Decker M. Pope</h1>
+                <p class="title">ERA Post-bac Research Fellow</p>
+                <p class="institution">University of Notre Dame</p>
+                
+                <div class="social-links">
+                    <a href="#" title="Google Scholar"><i class="ai ai-googlescholar"></i> <i class="fa-solid font-awesome"></i> Scholar</a>
+                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <a href="#"><i class="fa-solid fa-file-pdf"></i> CV (PDF)</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="about">About & CV</button>
+                <button class="tab-btn" data-tab="publications">Publications</button>
+                <button class="tab-btn highlight-tab" data-tab="trajectory"><i class="fa-solid fa-chart-line"></i> Research </button>
+            </nav>
+
+            <!-- TAB 1: About & CV -->
+            <section id="about" class="tab-content active">
+                <h2>Biography</h2>
+                <p class="bio-text">
+                    I am an Educational Research and Action Fellow exploring individual differences in language processing. My work focuses on the relationship between individual differences in working memory and other executive control functions and reading comprehension using behavioral paradigms.
+                </p>
+
+                <h2>Education</h2>
+                <div class="cv-item">
+                    <span class="year">2022 — 2024</span>
+                    <div>
+                        <h3>M.A.T. in French</h3>
+                    </div>
+                </div>
+                <div class="cv-item">
+                    <span class="year">2014 — 2018</span>
+                    <div>
+                        <h3>B.A. French, Linguistics</h3>
+                        <p class="sub">Indiana University Bloomington</p>
+                    </div>
+                </div>
+
+                <h2>Experience</h2>
+                <div class="cv-item">
+                    <span class="year">2026 — Present</span>
+                    <div>
+                        <h3>Education Research and Action Post-bac Fellow</h3>
+                        <p class="sub">University of Notre Dame</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: Publications -->
+            <section id="publications" class="tab-content">
+                <h2>Publications</h2>
+                <div class="pub-card" 
+                    <h3>Hierarchical neural processing in γ oscillations for syntactic and semantic operations accounts for first-and second-language epistemology</h3>
+                    <p class="authors">Laurent Dekydtspotter, A Kate Miller, Kyle Swanson, Jih-Ho Cha, Yanyu Xiong, Jae-Hyun Ahn, Jane A Gilbert, <strong>Decker Pope</strong>, Mike Iverson, Kent Meinert</p>
+                    <div class="pub-links">
+                        <a href="#">[PDF]</a>
+                        <a href="#">[Code]</a>
+                        <a href="#">[BibTeX]</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: Visual Research Trajectory -->
+            <section id="trajectory" class="tab-content">
+                <h2>Research Trajectory & Vision</h2>
+                <p class="section-desc">
+                    A visual mapping of how my research focus has evolved and where my lab is heading over the next 5–10 years.
+                </p>
+
+                <!-- Visualization 1: Theme Evolution Chart -->
+                <div class="viz-card">
+                    <h3>Focus Distribution Over Time</h3>
+                    <p class="sub">Shift in research focus and publication volume across key thrusts.</p>
+                    <div class="chart-container">
+                        <canvas id="trajectoryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Visualization 2: Roadmap / Pillars -->
+                <h3>Core Research Pillars & Horizons</h3>
+                <div class="roadmap-grid">
+                    <div class="pillar-card past">
+                        <span class="phase-badge">Phase 1: Foundations</span>
+                        <h4>Model Interpretability</h4>
+                        <p>Establishing mathematical guarantees for feature attribution algorithms.</p>
+                        <span class="status-done"><i class="fa-solid fa-circle-check"></i> Established (2018–2021)</span>
+                    </div>
+
+                    <div class="pillar-card present">
+                        <span class="phase-badge">Phase 2: Current Horizon</span>
+                        <h4>Human-AI Teaming</h4>
+                        <p>Evaluating real-time algorithmic reliance in medical and clinical settings.</p>
+                        <span class="status-active"><i class="fa-solid fa-spinner fa-spin"></i> Active Core (2022–Present)</span>
+                    </div>
+
+                    <div class="pillar-card future">
+                        <span class="phase-badge">Phase 3: Next Frontier</span>
+                        <h4>Adaptive Neuro-AI</h4>
+                        <p>Closing the loop between human neural feedback and dynamic AI policy updates.</p>
+                        <span class="status-next"><i class="fa-solid fa-compass"></i> Emerging Vision (2025+)</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
