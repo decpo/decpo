@@ -1,0 +1,281 @@
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.avatar {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    background-color: #cbd5e1; /* Placeholder fallback */
+}
+
+.sidebar h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.sidebar .title {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+}
+
+.sidebar .institution {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+/* Main Content & Tabs */
+.nav-tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.highlight-tab {
+    color: #059669;
+}
+.highlight-tab.active {
+    color: #059669;
+    border-bottom-color: #059669;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CV Items */
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cv-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    margin-bottom: 1.2rem;
+}
+
+.cv-item .year {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.cv-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cv-item .sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Publications */
+.pub-card {
+    background: var(--card-bg);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.pub-tag {
+    font-size: 0.75rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.pub-card h3 {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+}
+
+.pub-card .authors {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.pub-links {
+    margin-top: 0.5rem;
+}
+
+.pub-links a {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 0.8rem;
+    font-weight: 600;
+}
+
+/* Research Trajectory Visuals */
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.viz-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.pillar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pillar-card.past { border-top: 4px solid #94a3b8; }
+.pillar-card.present { border-top: 4px solid #2563eb; }
+.pillar-card.future { border-top: 4px solid #10b981; }
+
+.phase-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.pillar-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.pillar-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.status-done, .status-active, .status-next {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-done { color: #64748b; }
+.status-active { color: #2563eb; }
+.status-next { color: #10b981; }
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
