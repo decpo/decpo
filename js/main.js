@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let correctIsLeft = true;
     let mazeActive = false;
 
+    const startBtn = document.getElementById('maze-start-btn');
     const btnLeft = document.getElementById('maze-btn-left');
     const btnRight = document.getElementById('maze-btn-right');
     const textLeft = document.getElementById('maze-text-left');
@@ -150,9 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function initMaze() {
         mazeIndex = -1;
         mazeActive = false;
-        if (textLeft) textLeft.textContent = "Start (F)";
-        if (textRight) textRight.textContent = "Start (J)";
-        if (mazeTimerEl) mazeTimerEl.innerHTML = "Press F or J to begin...";
+        if (startBtn) startBtn.style.display = 'inline-flex';
+        if (btnLeft) btnLeft.style.display = 'none';
+        if (btnRight) btnRight.style.display = 'none';
+        if (mazeTimerEl) mazeTimerEl.innerHTML = "Click 'Start Task' to begin...";
+    }
+
+    function startMaze() {
+        mazeActive = true;
+        mazeIndex = 0;
+        if (startBtn) startBtn.style.display = 'none';
+        if (btnLeft) btnLeft.style.display = 'flex';
+        if (btnRight) btnRight.style.display = 'flex';
+        if (mazeTimerEl) mazeTimerEl.innerHTML = `Word 1/${mazeSentence.length}`;
+        setupMazeStep();
     }
 
     function setupMazeStep() {
@@ -163,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const item = mazeSentence[mazeIndex];
-        // Randomize whether correct word is on the left or right
         correctIsLeft = Math.random() < 0.5;
 
         if (textLeft && textRight) {
@@ -175,63 +186,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleMazeChoice(chosenLeft) {
-        // First choice starts trial
-        if (!mazeActive) {
-            mazeActive = true;
-            mazeIndex = 0;
-            setupMazeStep();
-            if (mazeTimerEl) mazeTimerEl.innerHTML = `Word 1/${mazeSentence.length}`;
-            return;
-        }
+        // Do nothing if task hasn't been started with the button yet
+        if (!mazeActive) return;
 
         const now = performance.now();
         const rt = Math.round(now - mazeStartTime);
 
-        // Check if correct button chosen
         if (chosenLeft === correctIsLeft) {
             mazeIndex++;
             if (mazeIndex < mazeSentence.length) {
                 if (mazeTimerEl) mazeTimerEl.innerHTML = `Word ${mazeIndex + 1}/${mazeSentence.length} | RT: <strong>${rt} ms</strong>`;
                 setupMazeStep();
             } else {
-                if (mazeTimerEl) mazeTimerEl.innerHTML = `Trial complete! Reached the end with 0 errors.`;
+                if (mazeTimerEl) mazeTimerEl.innerHTML = `Trial complete! Navigated with 0 errors.`;
                 if (textLeft) textLeft.textContent = "Finished!";
                 if (textRight) textRight.textContent = "Finished!";
+                mazeActive = false;
             }
         } else {
-            // Error made (dead end)
             if (mazeTimerEl) mazeTimerEl.innerHTML = `❌ <strong>Mistake!</strong> Dead end at word ${mazeIndex + 1}. Press Reset to retry.`;
             mazeActive = false;
         }
     }
 
+    if (startBtn) startBtn.addEventListener('click', startMaze);
     if (btnLeft && btnRight) {
         initMaze();
         btnLeft.addEventListener('click', () => handleMazeChoice(true));
         btnRight.addEventListener('click', () => handleMazeChoice(false));
         if (mazeResetBtn) mazeResetBtn.addEventListener('click', initMaze);
-
-        // Keyboard arrow listener
-       // --- KEYBOARD LISTENERS ---
-window.addEventListener('keydown', (e) => {
-    const researchTab = document.getElementById('research');
-    if (researchTab && researchTab.classList.contains('active')) {
-        
-        // Prevent key listener if typing in an input or textarea
-        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-
-        const key = e.key.toLowerCase();
-
-        if (e.code === 'Space') {
-            e.preventDefault();
-            advanceSPR();
-        } else if (key === 'f') {
-            e.preventDefault();
-            handleMazeChoice(true); // Left choice
-        } else if (key === 'j') {
-            e.preventDefault();
-            handleMazeChoice(false); // Right choice
-        }
     }
-});
-}
+
+    // --- 5. KEYBOARD LISTENERS ---
+    window.addEventListener('keydown', (e) => {
+        const researchTab = document.getElementById('research');
+        if (researchTab && researchTab.classList.contains('active')) {
+            if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+            const key = e.key.toLowerCase();
+
+            if (e.code === 'Space') {
+                e.preventDefault();
+                advanceSPR();
+            } else if (key === 'f') {
+                e.preventDefault();
+                handleMazeChoice(true);
+            } else if (key === 'j') {
+                e.preventDefault();
+                handleMazeChoice(false);
+            }
+        }
+    });
