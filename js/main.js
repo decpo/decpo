@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Tab Switching
+function initWebsite() {
+    // 1. Tab Switching Logic
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -15,20 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Dark Mode Toggle
+    // 2. Dark Mode Toggle Logic
     const themeBtn = document.getElementById('theme-toggle');
-    const icon = themeBtn ? themeBtn.querySelector('i') : null;
-
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-
-            // Swap icon between Moon and Sun
-            if (document.body.classList.contains('dark-mode')) {
-                if (icon) icon.className = 'fa-solid fa-sun';
-            } else {
-                if (icon) icon.className = 'fa-solid fa-moon';
+            
+            // Toggle icon
+            const icon = themeBtn.querySelector('i');
+            if (icon) {
+                if (document.body.classList.contains('dark-mode')) {
+                    icon.className = 'fa-solid fa-sun';
+                } else {
+                    icon.className = 'fa-solid fa-moon';
+                }
             }
         });
     }
-});
+}
+
+// Run immediately if DOM is ready, otherwise wait
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWebsite);
+} else {
+    initWebsite();
+}
