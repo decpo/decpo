@@ -90,7 +90,24 @@
             <section id="research" class="tab-content">
                 <h2>Current Research Projects</h2>
                 <p class="section-desc">Current research focus and active behavioral studies.</p>
+                <!-- Interactive SPR Demo (Masked Moving-Window) -->
+            <div class="spr-demo-card">
+                <div class="spr-header">
+                    <span class="spr-badge"><i class="fa-solid fa-flask"></i> Interactive Demo</span>
+                    <span class="spr-subtitle">Moving-Window SPR Paradigm</span>
+                </div>
+                <p class="spr-instructions">Press <kbd>SPACE</kbd> (or tap the button) to unmask each word:</p>
 
+                <div class="spr-display" id="spr-display">
+        <!-- Spans dynamically generated via JS -->
+                </div>
+
+                <div class="spr-controls">
+                    <span id="spr-timer" class="spr-timer">Press SPACE to begin...</span>
+                    <button id="spr-next-btn" class="spr-btn">Advance <kbd>Space</kbd></button>
+                </div>
+            </div>
+                
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-top">
