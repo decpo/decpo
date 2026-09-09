@@ -1,5 +1,5 @@
-function initWebsite() {
-    // 1. Tab Switching Logic
+document.addEventListener('DOMContentLoaded', () => {
+    // Tab switching
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -9,34 +9,23 @@ function initWebsite() {
             contents.forEach(c => c.classList.remove('active'));
 
             tab.classList.add('active');
-            const target = tab.getAttribute('data-tab');
-            const targetEl = document.getElementById(target);
-            if (targetEl) targetEl.classList.add('active');
+            const targetId = tab.getAttribute('data-tab');
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
         });
     });
 
-    // 2. Dark Mode Toggle Logic
+    // Dark Mode Toggle
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            
-            // Toggle icon
-            const icon = themeBtn.querySelector('i');
-            if (icon) {
-                if (document.body.classList.contains('dark-mode')) {
-                    icon.className = 'fa-solid fa-sun';
-                } else {
-                    icon.className = 'fa-solid fa-moon';
-                }
-            }
+            const isDark = document.body.classList.contains('dark-mode');
+            themeBtn.innerHTML = isDark 
+                ? '<i class="fa-solid fa-sun"></i> Light Mode' 
+                : '<i class="fa-solid fa-moon"></i> Dark Mode';
         });
     }
-}
-
-// Run immediately if DOM is ready, otherwise wait
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initWebsite);
-} else {
-    initWebsite();
-}
+});
