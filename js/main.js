@@ -150,9 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function initMaze() {
         mazeIndex = -1;
         mazeActive = false;
-        if (textLeft) textLeft.textContent = "Start (←)";
-        if (textRight) textRight.textContent = "Start (→)";
-        if (mazeTimerEl) mazeTimerEl.innerHTML = "Press Left or Right arrow to begin...";
+        if (textLeft) textLeft.textContent = "Start (F)";
+        if (textRight) textRight.textContent = "Start (J)";
+        if (mazeTimerEl) mazeTimerEl.innerHTML = "Press F or J to begin...";
     }
 
     function setupMazeStep() {
@@ -215,10 +215,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('keydown', (e) => {
             const researchTab = document.getElementById('research');
             if (researchTab && researchTab.classList.contains('active')) {
-                if (e.key === 'ArrowLeft') {
+                if (e.key === 'f') {
                     e.preventDefault();
                     handleMazeChoice(true);
-                } else if (e.key === 'ArrowRight') {
+                } else if (e.key === 'j') {
                     e.preventDefault();
                     handleMazeChoice(false);
                 }
