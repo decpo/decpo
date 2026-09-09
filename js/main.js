@@ -122,3 +122,106 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// --- 4. A-MAZE TASK DEMO LOGIC ---
+    const mazeSentence = [
+        { word: "The", distractor: "Twa" },
+        { word: "researchers", distractor: "grew" },
+        { word: "compared", distractor: "blonk" },
+        { word: "individual", distractor: "quibbles" },
+        { word: "differences", distractor: "vum" },
+        { word: "in", distractor: "climbed" },
+        { word: "working", distractor: "churched" },
+        { word: "memory", distractor: "glif" },
+        { word: "capacity.", distractor: "passions." }
+    ];
+
+    let mazeIndex = -1;
+    let mazeStartTime = 0;
+    let correctIsLeft = true;
+    let mazeActive = false;
+
+    const btnLeft = document.getElementById('maze-btn-left');
+    const btnRight = document.getElementById('maze-btn-right');
+    const textLeft = document.getElementById('maze-text-left');
+    const textRight = document.getElementById('maze-text-right');
+    const mazeTimerEl = document.getElementById('maze-timer');
+    const mazeResetBtn = document.getElementById('maze-reset-btn');
+
+    function initMaze() {
+        mazeIndex = -1;
+        mazeActive = false;
+        if (textLeft) textLeft.textContent = "Start (←)";
+        if (textRight) textRight.textContent = "Start (→)";
+        if (mazeTimerEl) mazeTimerEl.innerHTML = "Press Left or Right arrow to begin...";
+    }
+
+    function setupMazeStep() {
+        if (mazeIndex >= mazeSentence.length) {
+            if (mazeTimerEl) mazeTimerEl.innerHTML = `Maze complete! Sentence navigated successfully!`;
+            mazeActive = false;
+            return;
+        }
+
+        const item = mazeSentence[mazeIndex];
+        // Randomize whether correct word is on the left or right
+        correctIsLeft = Math.random() < 0.5;
+
+        if (textLeft && textRight) {
+            textLeft.textContent = correctIsLeft ? item.word : item.distractor;
+            textRight.textContent = correctIsLeft ? item.distractor : item.word;
+        }
+
+        mazeStartTime = performance.now();
+    }
+
+    function handleMazeChoice(chosenLeft) {
+        // First choice starts trial
+        if (!mazeActive) {
+            mazeActive = true;
+            mazeIndex = 0;
+            setupMazeStep();
+            if (mazeTimerEl) mazeTimerEl.innerHTML = `Word 1/${mazeSentence.length}`;
+            return;
+        }
+
+        const now = performance.now();
+        const rt = Math.round(now - mazeStartTime);
+
+        // Check if correct button chosen
+        if (chosenLeft === correctIsLeft) {
+            mazeIndex++;
+            if (mazeIndex < mazeSentence.length) {
+                if (mazeTimerEl) mazeTimerEl.innerHTML = `Word ${mazeIndex + 1}/${mazeSentence.length} | RT: <strong>${rt} ms</strong>`;
+                setupMazeStep();
+            } else {
+                if (mazeTimerEl) mazeTimerEl.innerHTML = `Trial complete! Reached the end with 0 errors.`;
+                if (textLeft) textLeft.textContent = "Finished!";
+                if (textRight) textRight.textContent = "Finished!";
+            }
+        } else {
+            // Error made (dead end)
+            if (mazeTimerEl) mazeTimerEl.innerHTML = `❌ <strong>Mistake!</strong> Dead end at word ${mazeIndex + 1}. Press Reset to retry.`;
+            mazeActive = false;
+        }
+    }
+
+    if (btnLeft && btnRight) {
+        initMaze();
+        btnLeft.addEventListener('click', () => handleMazeChoice(true));
+        btnRight.addEventListener('click', () => handleMazeChoice(false));
+        if (mazeResetBtn) mazeResetBtn.addEventListener('click', initMaze);
+
+        // Keyboard arrow listener
+        window.addEventListener('keydown', (e) => {
+            const researchTab = document.getElementById('research');
+            if (researchTab && researchTab.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    handleMazeChoice(true);
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    handleMazeChoice(false);
+                }
+            }
+        });
+    }
