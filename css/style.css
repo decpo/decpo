@@ -210,9 +210,11 @@ h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Changed auto-fill to auto-fit so cards expand to fill the available main width */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .project-card {
