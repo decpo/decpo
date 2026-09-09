@@ -93,12 +93,39 @@
                 <!-- Interactive SPR Demo (Masked Moving-Window) -->
             <div class="spr-demo-card">
                 <div class="spr-header">
-                    <span class="spr-badge"><i class="fa-solid fa-flask"></i> Interactive Demo</span>
-                    <span class="spr-subtitle">Moving-Window SPR Paradigm</span>
+                    <span class="spr-badge">Interactive Demo</span>
+                    <span class="spr-subtitle">Masked Moving-Window SPR Paradigm</span>
                 </div>
                 <p class="spr-instructions">Press <kbd>SPACE</kbd> (or tap the button) to unmask each word:</p>
 
                 <div class="spr-display" id="spr-display">
+                    <!-- Interactive A-Maze Task Demo -->
+            <div class="maze-demo-card">
+                <div class="maze-header">
+                    <span class="maze-badge"><i class="fa-solid fa-code-branch"></i> Interactive Demo</span>
+                    <span class="maze-subtitle">A-Maze Paradigm</span>
+                </div>
+                <p class="maze-instructions">
+                    Select the word that correctly continues the sentence using <kbd>← Left</kbd> / <kbd>Right →</kbd> (or click):
+                </p>
+
+    <!-- Word Selection Display -->
+                <div class="maze-display">
+                    <button id="maze-btn-left" class="maze-word-btn">
+                        <span class="key-hint">← Left</span>
+                        <span id="maze-text-left" class="word-text">Ready?</span>
+                    </button>
+                    <button id="maze-btn-right" class="maze-word-btn">
+                        <span class="key-hint">Right →</span>
+                        <span id="maze-text-right" class="word-text">Click Start</span>
+                    </button>
+                </div>
+
+                <div class="maze-controls">
+                    <span id="maze-timer" class="maze-timer">Press any choice to start...</span>
+                    <button id="maze-reset-btn" class="maze-reset-btn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </div>
         <!-- Spans dynamically generated via JS -->
                 </div>
 
