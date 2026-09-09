@@ -212,16 +212,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mazeResetBtn) mazeResetBtn.addEventListener('click', initMaze);
 
         // Keyboard arrow listener
-        window.addEventListener('keydown', (e) => {
-            const researchTab = document.getElementById('research');
-            if (researchTab && researchTab.classList.contains('active')) {
-                if (e.key === 'f') {
-                    e.preventDefault();
-                    handleMazeChoice(true);
-                } else if (e.key === 'j') {
-                    e.preventDefault();
-                    handleMazeChoice(false);
-                }
-            }
-        });
+       // --- KEYBOARD LISTENERS ---
+window.addEventListener('keydown', (e) => {
+    const researchTab = document.getElementById('research');
+    if (researchTab && researchTab.classList.contains('active')) {
+        
+        // Prevent key listener if typing in an input or textarea
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        const key = e.key.toLowerCase();
+
+        if (e.code === 'Space') {
+            e.preventDefault();
+            advanceSPR();
+        } else if (key === 'f') {
+            e.preventDefault();
+            handleMazeChoice(true); // Left choice
+        } else if (key === 'j') {
+            e.preventDefault();
+            handleMazeChoice(false); // Right choice
+        }
     }
+});
+}
