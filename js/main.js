@@ -124,14 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // --- 4. A-MAZE TASK DEMO LOGIC ---
     const mazeSentence = [
-        { word: "The", distractor: "Twa" },
-        { word: "researchers", distractor: "grew" },
-        { word: "compared", distractor: "blonk" },
-        { word: "individual", distractor: "quibbles" },
-        { word: "differences", distractor: "vum" },
-        { word: "in", distractor: "climbed" },
-        { word: "working", distractor: "churched" },
-        { word: "memory", distractor: "glif" },
+        { word: "The", distractor: "---" },
+        { word: "researchers", distractor: "communicate" },
+        { word: "compared", distractor: "brother" },
+        { word: "individual", distractor: "facilitate" },
+        { word: "differences", distractor: "beautifully" },
+        { word: "in", distractor: "go" },
+        { word: "working", distractor: "cabinet" },
+        { word: "memory", distractor: "danced" },
         { word: "capacity.", distractor: "passions." }
     ];
 
