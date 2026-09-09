@@ -432,3 +432,122 @@ kbd {
     color: #ffffff;
     border: none;
 }
+/* Interactive A-Maze Task Styling */
+.maze-demo-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid #0284c7; /* Distinct indigo/cyan accent for Maze */
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.maze-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.maze-badge {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+body.dark-mode .maze-badge {
+    background-color: #075985;
+    color: #bae6fd;
+}
+
+.maze-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.maze-instructions {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.maze-display {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.maze-word-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    min-width: 140px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.15s ease;
+}
+
+.maze-word-btn:hover {
+    border-color: #0284c7;
+    transform: translateY(-2px);
+}
+
+.maze-word-btn .key-hint {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.maze-word-btn .word-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.maze-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.maze-timer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.maze-timer strong {
+    color: #0284c7;
+}
+
+.maze-reset-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.maze-reset-btn:hover {
+    background-color: var(--accent-light);
+}
