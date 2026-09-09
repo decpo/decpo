@@ -107,30 +107,36 @@
         </div>
     </div>
 
-   <!-- 2. Interactive A-Maze Task Demo -->
+  <!-- 2. Interactive A-Maze Task Demo -->
 <div class="maze-demo-card">
     <div class="maze-header">
-        <span class="maze-badge"> Interactive Demo</span>
+        <span class="maze-badge"><i class="fa-solid fa-code-branch"></i> Interactive Demo</span>
         <span class="maze-subtitle">A-Maze Paradigm</span>
     </div>
     <p class="maze-instructions">
-        Select the word that correctly continues the sentence using <kbd>F</kbd> (Left) / <kbd>J</kbd> (Right) (or click):
+        Click <strong>Start Task</strong>, then select the word that correctly continues the sentence using <kbd>F</kbd> (Left) / <kbd>J</kbd> (Right):
     </p>
 
     <!-- Word Selection Display -->
     <div class="maze-display">
-        <button id="maze-btn-left" class="maze-word-btn">
-            <span class="key-hint">Key F</span>
-            <span id="maze-text-left" class="word-text">Ready?</span>
+        <!-- Start Button (visible before task starts) -->
+        <button id="maze-start-btn" class="maze-start-btn">
+            <i class="fa-solid fa-play"></i> Start Task
         </button>
-        <button id="maze-btn-right" class="maze-word-btn">
+
+        <!-- Choice Buttons (hidden until Start is clicked) -->
+        <button id="maze-btn-left" class="maze-word-btn" style="display: none;">
+            <span class="key-hint">Key F</span>
+            <span id="maze-text-left" class="word-text"></span>
+        </button>
+        <button id="maze-btn-right" class="maze-word-btn" style="display: none;">
             <span class="key-hint">Key J</span>
-            <span id="maze-text-right" class="word-text">Click Start</span>
+            <span id="maze-text-right" class="word-text"></span>
         </button>
     </div>
 
     <div class="maze-controls">
-        <span id="maze-timer" class="maze-timer">Press F or J to start...</span>
+        <span id="maze-timer" class="maze-timer">Click 'Start Task' to begin...</span>
         <button id="maze-reset-btn" class="maze-reset-btn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
     </div>
 </div>
