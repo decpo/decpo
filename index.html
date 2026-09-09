@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decker M. Pope</title>
-    <!-- Modern Sans-serif Font & Icons -->
+    <title>Decker M. Pope | Profile</title>
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- cloudflare for Google Scholar icon -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-        <!-- Sidebar / Bio Header -->
+
+    <div class="container">
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-card">
                 <img src="assets/profile.jpg" alt="Decker Pope" class="avatar" id="avatar-img">
                 <h1>Decker M. Pope</h1>
                 <p class="title">ERA Post-bac Research Fellow</p>
                 <p class="institution">University of Notre Dame</p>
+                
                 <div class="social-links">
                     <a href="https://scholar.google.com/citations?user=7golzMUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>
                     <a href="https://github.com/decpo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
+
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fa-solid fa-moon"></i> Dark Mode
+                </button>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- Main Content -->
         <main class="main-content">
-            <!-- Navigation Tabs -->
+            <!-- Nav Tabs -->
             <nav class="nav-tabs">
                 <button class="tab-btn active" data-tab="about">About & CV</button>
                 <button class="tab-btn" data-tab="publications">Publications</button>
                 <button class="tab-btn highlight-tab" data-tab="research"><i class="fa-solid fa-flask"></i> Research</button>
-                <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
             </nav>
 
             <!-- TAB 1: About & CV -->
@@ -54,7 +57,7 @@
                     </div>
                 </div>
                 <div class="cv-item">
-                    <span class="year">2018 — 2022</span>
+                    <span class="year">2014 — 2018</span>
                     <div>
                         <h3>B.A. French, Linguistics</h3>
                         <p class="sub">Indiana University Bloomington</p>
@@ -83,60 +86,43 @@
                 </div>
             </section>
 
-            <!-- TAB 3: Research & Active Projects -->
+            <!-- TAB 3: Research -->
             <section id="research" class="tab-content">
                 <h2>Current Research Projects</h2>
-                <p class="section-desc">
-                    Current research
-                </p>
+                <p class="section-desc">Current research focus and active behavioral studies.</p>
 
                 <div class="projects-grid">
-                    <!-- Project 1 -->
                     <article class="project-card">
                         <div class="project-top">
                             <span class="status-badge active">Active</span>
-                            <span class="project-tag">Capturing Individual Differences in Sentence Processing</span>
+                            <span class="project-tag">Sentence Processing</span>
                         </div>
-                        
                         <h3>A-maze versus Self-Paced Reading Paradigms: Capturing Individual Differences in Sentence Processing</h3>
-                        <p class="project-desc">
-                            Two widely used paradigms in sentence processing, A-maze and self-paced reading, have recently been used to investigate individual differences in sentence processing. This project aims to compare the reliability of each task across two testing sessions.
-                        </p>
-
+                        <p class="project-desc">Two widely used paradigms in sentence processing, A-maze and self-paced reading, have recently been used to investigate individual differences in sentence processing. This project aims to compare the reliability of each task across two testing sessions.</p>
                         <div class="project-meta">
                             <p><strong>Collaborators:</strong> Matt Robison, Department of Psychology at the University of Notre Dame</p>
                         </div>
                     </article>
 
-                    <!-- Project 2 -->
                     <article class="project-card">
                         <div class="project-top">
                             <span class="status-badge active">Active</span>
-                            <span class="project-tag">Associative Learning and Fluid Intelligence</span>
+                            <span class="project-tag">Associative Learning</span>
                         </div>
-                        
                         <h3>Raven Predicts Learning Rate in Associative Learning, but Not in Free Recall</h3>
-                        <p class="project-desc">
-                            Investigating the relationship between fluid intelligence and learning across three tasks.
-                        </p>
-
+                        <p class="project-desc">Investigating the relationship between fluid intelligence and learning across three tasks.</p>
                         <div class="project-meta">
                             <p><strong>Collaborators:</strong> Matt Robison, Department of Psychology at the University of Notre Dame</p>
                         </div>
                     </article>
 
-                    <!-- Project 3 -->
                     <article class="project-card">
                         <div class="project-top">
                             <span class="status-badge active">Active</span>
-                            <span class="project-tag">Word Recognition in Children</span>
+                            <span class="project-tag">Word Recognition</span>
                         </div>
-                        
                         <h3>Testing Predictive Effects of Distributed, Developmental Models of Word Recognition on Third-Grade Student Oral Reading Fluency (ORF) Error Profiles</h3>
-                        <p class="project-desc">
-                            A behavioral study evaluating decision-making accuracy when domain experts are presented with plausible but inaccurate algorithmic suggestions.
-                        </p>
-
+                        <p class="project-desc">A behavioral study evaluating decision-making accuracy when domain experts are presented with plausible but inaccurate algorithmic suggestions.</p>
                         <div class="project-meta">
                             <p><strong>Lead Student:</strong> Natalie Gildea, CLAD Lab at the University of Notre Dame</p>
                         </div>
@@ -145,6 +131,7 @@
             </section>
         </main>
     </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
