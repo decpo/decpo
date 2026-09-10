@@ -636,12 +636,16 @@ body.dark-mode .maze-badge {
   align-items: center;
   justify-content: center;
   position: relative;
-  /* Dynamic radial gradient centered at mouse variables */
-  background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), 
-    rgba(56, 189, 248, 0.12), 
-    transparent 80%
-  ), #0b0f19;
+  
+  /* Seamless: Uses whatever background color is already being used
+  background-color: inherit; 
+
+  /* Ultra-subtle neutral spotlight */
+  background-image: radial-gradient(
+    500px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), 
+    rgba(255, 255, 255, 0.04), 
+    transparent 70%
+  );
 }
 /*card animations*/
 .reveal {
