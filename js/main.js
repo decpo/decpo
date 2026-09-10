@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. TAB SWITCHING ---
+
+    // ==========================================
+    // 1. TAB SWITCHING
+    // ==========================================
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -15,14 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetContent.classList.add('active');
             }
 
-            // Re-initialize SPR dashes whenever user switches to Research tab
+            // Re-initialize SPR dashes when switching to Research tab
             if (targetId === 'research') {
                 initSPR();
             }
         });
     });
 
-    // --- 2. DARK MODE TOGGLE ---
+    // ==========================================
+    // 2. DARK MODE TOGGLE
+    // ==========================================
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
@@ -34,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 3. MASKED MOVING-WINDOW SPR DEMO ---
+    // ==========================================
+    // 3. MASKED MOVING-WINDOW SPR DEMO LOGIC
+    // ==========================================
     const sprSentence = ["Two", "widely", "used", "paradigms", "in", "sentence", "processing", "were", "compared", "across", "two", "testing", "sessions."];
     let sprIndex = -1;
     let sprStartTime = 0;
@@ -43,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sprTimerEl = document.getElementById('spr-timer');
     const sprBtn = document.getElementById('spr-next-btn');
 
-    // Build masked sentence dashes
     function initSPR() {
         if (!sprDisplayEl) return;
         sprDisplayEl.innerHTML = '';
@@ -57,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sprTimerEl) sprTimerEl.innerHTML = 'Press SPACE to begin...';
     }
 
-    // Unmask word & calculate RT
     function advanceSPR() {
         if (!sprDisplayEl) return;
         const now = performance.now();
@@ -68,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // First press: Reveal word 0
         if (sprIndex === -1) {
             sprIndex = 0;
             wordSpans[0].textContent = sprSentence[0];
@@ -78,23 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Calculate RT for previous word
         const rt = Math.round(now - sprStartTime);
 
-        // Re-mask previous word
         wordSpans[sprIndex].textContent = '-'.repeat(sprSentence[sprIndex].length);
         wordSpans[sprIndex].classList.remove('active-word');
 
         sprIndex++;
 
-        // Trial completed
         if (sprIndex >= sprSentence.length) {
             if (sprTimerEl) sprTimerEl.innerHTML = `Trial complete! Final RT: <strong>${rt} ms</strong>. Press SPACE to restart.`;
             initSPR();
             return;
         }
 
-        // Unmask next word
         wordSpans[sprIndex].textContent = sprSentence[sprIndex];
         wordSpans[sprIndex].classList.add('active-word');
         sprStartTime = performance.now();
@@ -104,25 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Run initial setup
-    if (sprDisplayEl) {
-        initSPR();
-    }
+    if (sprDisplayEl) initSPR();
+    if (sprBtn) sprBtn.addEventListener('click', advanceSPR);
 
-    if (sprBtn) {
-        sprBtn.addEventListener('click', advanceSPR);
-    }
-
-    // Spacebar listener
-    window.addEventListener('keydown', (e) => {
-        const researchTab = document.getElementById('research');
-        if (e.code === 'Space' && researchTab && researchTab.classList.contains('active')) {
-            e.preventDefault(); // Stop page scrolling
-            advanceSPR();
-        }
-    });
-});
-// --- 4. A-MAZE TASK DEMO LOGIC ---
+    // ==========================================
+    // 4. A-MAZE TASK DEMO LOGIC
+    // ==========================================
     const mazeSentence = [
         { word: "The", distractor: "---" },
         { word: "researchers", distractor: "communicate" },
@@ -186,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleMazeChoice(chosenLeft) {
-        // Do nothing if task hasn't been started with the button yet
         if (!mazeActive) return;
 
         const now = performance.now();
@@ -217,7 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mazeResetBtn) mazeResetBtn.addEventListener('click', initMaze);
     }
 
-    // --- 5. KEYBOARD LISTENERS ---
+    // ==========================================
+    // 5. KEYBOARD LISTENERS (UNIFIED)
+    // ==========================================
     window.addEventListener('keydown', (e) => {
         const researchTab = document.getElementById('research');
         if (researchTab && researchTab.classList.contains('active')) {
@@ -237,34 +225,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-document.addEventListener('DOMContentLoaded', function() {
-  var typed = new Typed('#typed-target', {
-    strings: [
-      'Why do reading abilities diverge?',
-      'What brain architecture underpins individual reading skill?',
-      'Is reading variation driven by domain-general resources?',
-      'How does reading skill change over time?'
-    ],
-    typeSpeed: 40,      // Speed of typing in ms
-    backSpeed: 25,      // Speed of backspacing in ms
-    backDelay: 2200,    // Pause duration when sentence completes (ms)
-    startDelay: 400,    // Initial delay before typing starts (ms)
-    loop: true,         // Loop indefinitely
-    showCursor: true,
-    cursorChar: '|'
-  });
-});
-document.addEventListener('DOMContentLoaded', function() {
 
-  // 1. Mouse-Tracking Radial Glow in Hero
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      hero.style.setProperty('--mouse-x', `${x}px`);
-      hero.style.setProperty('--mouse-y', `${y}px`);
-    });
-  }
+    // ==========================================
+    // 6. TYPED.JS INITIALIZATION
+    // ==========================================
+    if (document.getElementById('typed-target')) {
+        new Typed('#typed-target', {
+            strings: [
+                'Why do reading abilities diverge?',
+                'What brain architecture underpins individual reading skill?',
+                'Is reading variation driven by domain-general resources?',
+                'How does reading skill change over time?'
+            ],
+            typeSpeed: 40,
+            backSpeed: 25,
+            backDelay: 2200,
+            startDelay: 400,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+
+    // ==========================================
+    // 7. HERO MOUSE-TRACKING GLOW
+    // ==========================================
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            hero.style.setProperty('--mouse-x', `${x}px`);
+            hero.style.setProperty('--mouse-y', `${y}px`);
+        });
+    }
+
 });
