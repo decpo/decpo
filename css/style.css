@@ -628,24 +628,15 @@ body.dark-mode .maze-badge {
   backdrop-filter: blur(12px); /* Frosted glass effect */
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-/*glow*/
+/* Clean Hero Section */
 .hero {
-  min-height: 80vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
-  
-  /* Seamless: Uses whatever background color is already being used
-  background-color: inherit; 
-
-  /* Ultra-subtle neutral spotlight */
-  background-image: radial-gradient(
-    500px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), 
-    rgba(255, 255, 255, 0.04), 
-    transparent 70%
-  );
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: transparent;
 }
 /*card animations*/
 .reveal {
@@ -657,19 +648,4 @@ body.dark-mode .maze-badge {
   opacity: 1;
   transform: translateY(0);
 }
-/* Nuke any background colors/gradients on .hero AND its pseudo-layers */
-.hero,
-.hero::before,
-.hero::after {
-  background-color: transparent !important;
-  background-image: none !important;
-}
 
-/* Apply ONLY the soft neutral spotlight to .hero */
-.hero {
-  background-image: radial-gradient(
-    500px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), 
-    rgba(255, 255, 255, 0.05), 
-    transparent 70%
-  ) !important;
-}
