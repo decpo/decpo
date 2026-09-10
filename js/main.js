@@ -237,3 +237,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+document.addEventListener('DOMContentLoaded', function() {
+  var typed = new Typed('#typed-target', {
+    strings: [
+      'Why do reading abilities diverge?',
+      'Is comprehension shaped by working memory?',
+      'Is reading bound by fluid intelligence?',
+      'Are specialized language networks responsible?'
+    ],
+    typeSpeed: 40,      // Speed of typing in ms
+    backSpeed: 25,      // Speed of backspacing in ms
+    backDelay: 2200,    // Pause duration when sentence completes (ms)
+    startDelay: 400,    // Initial delay before typing starts (ms)
+    loop: true,         // Loop indefinitely
+    showCursor: true,
+    cursorChar: '|'
+  });
+});
