@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var typed = new Typed('#typed-target', {
     strings: [
       'Why do reading abilities diverge?',
-      'What drives individual differences in reading?',
+      'What brain architecture underpins individual reading skill?',
       'Is reading variation driven by domain-general resources?',
       'How does reading skill change over time?'
     ],
