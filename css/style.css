@@ -657,3 +657,19 @@ body.dark-mode .maze-badge {
   opacity: 1;
   transform: translateY(0);
 }
+/* Nuke any background colors/gradients on .hero AND its pseudo-layers */
+.hero,
+.hero::before,
+.hero::after {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Apply ONLY the soft neutral spotlight to .hero */
+.hero {
+  background-image: radial-gradient(
+    500px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), 
+    rgba(255, 255, 255, 0.05), 
+    transparent 70%
+  ) !important;
+}
