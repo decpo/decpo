@@ -60,6 +60,7 @@ h1, h2, h3, .project-card h3, .pub-card h3 {
 
 /* Sidebar */
 .sidebar {
+    position: sticky
     background: var(--card-bg);
     padding: 2rem;
     border-radius: var(--radius);
