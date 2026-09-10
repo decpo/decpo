@@ -241,9 +241,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var typed = new Typed('#typed-target', {
     strings: [
       'Why do reading abilities diverge?',
-      'Is comprehension shaped by working memory?',
-      'Is reading bound by fluid intelligence?',
-      'Are specialized language networks responsible?'
+      'What drives individual differences in reading?',
+      'Is reading variation driven by domain-general resources?',
+      'How does reading skill change over time?'
     ],
     typeSpeed: 40,      // Speed of typing in ms
     backSpeed: 25,      // Speed of backspacing in ms
