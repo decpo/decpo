@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <title>Decker M. Pope | Profile</title>
-    <!-- Fonts & Icons -->
-    <head>
-    <meta charset="UTF-8">
-    <title>Your Name | Academic Portfolio</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+
+    <!-- Third-Party Libraries -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Hero Section with Mouse Tracking Glow -->
+    <!-- Hero Section with Mouse Tracking Glow -->
     <section class="hero">
-  <div class="hero-content">    
-    <h1 class="hero-title">
-      <span class="static-text">Language is human.</span>
-      <span id="typed-target" class="typed-text"></span>
-    </h1>
-  </div>
-</section>
+        <div class="hero-content">    
+            <h1 class="hero-title">
+                <span class="static-text">Language is human.</span>
+                <span id="typed-target" class="typed-text"></span>
+            </h1>
+        </div>
+    </section>
+
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -43,7 +45,7 @@
                     <a href="https://github.com/decpo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
 
-                <button id="theme-toggle" class="theme-btn">
+                <button id="theme-toggle" class="theme-btn" type="button">
                     <i class="fa-solid fa-moon"></i> Dark Mode
                 </button>
             </div>
@@ -53,9 +55,9 @@
         <main class="main-content">
             <!-- Nav Tabs -->
             <nav class="nav-tabs">
-                <button class="tab-btn active" data-tab="about">About & CV</button>
-                <button class="tab-btn" data-tab="publications">Publications</button>
-                <button class="tab-btn" data-tab="research">Research</button>
+                <button type="button" class="tab-btn active" data-tab="about">About & CV</button>
+                <button type="button" class="tab-btn" data-tab="publications">Publications</button>
+                <button type="button" class="tab-btn" data-tab="research">Research</button>
             </nav>
 
             <!-- TAB 1: About & CV -->
@@ -96,7 +98,7 @@
                         <p class="sub">Springville Community Academy</p>
                     </div>
                 </div>
-                 <div class="cv-item">
+                <div class="cv-item">
                     <span class="year">2022 — 2024</span>
                     <div>
                         <h3>Associate Instructor of French</h3>
@@ -117,102 +119,103 @@
                 </div>
             </section>
 
-   <!-- TAB 3: Research -->
-<section id="research" class="tab-content">
-    <h2>Current Research Projects</h2>
-    <p class="section-desc">Current research focus and active behavioral studies.</p>
+            <!-- TAB 3: Research -->
+            <section id="research" class="tab-content">
+                <h2>Current Research Projects</h2>
+                <p class="section-desc">Current research focus and active behavioral studies.</p>
 
-    <!-- 1. Interactive SPR Demo -->
-    <div class="spr-demo-card">
-        <div class="spr-header">
-            <span class="spr-badge">Interactive Demo</span>
-            <span class="spr-subtitle">Masked Moving-Window SPR Paradigm</span>
-        </div>
-        <p class="spr-instructions">Press <kbd>SPACE</kbd> (or tap the button) to unmask each word:</p>
+                <!-- 1. Interactive SPR Demo -->
+                <div class="spr-demo-card">
+                    <div class="spr-header">
+                        <span class="spr-badge">Interactive Demo</span>
+                        <span class="spr-subtitle">Masked Moving-Window SPR Paradigm</span>
+                    </div>
+                    <p class="spr-instructions">Press <kbd>SPACE</kbd> (or tap the button) to unmask each word:</p>
 
-        <div class="spr-display" id="spr-display"></div>
+                    <div class="spr-display" id="spr-display"></div>
 
-        <div class="spr-controls">
-            <span id="spr-timer" class="spr-timer">Press SPACE to begin...</span>
-            <button id="spr-next-btn" class="spr-btn">Advance <kbd>Space</kbd></button>
-        </div>
+                    <div class="spr-controls">
+                        <span id="spr-timer" class="spr-timer">Press SPACE to begin...</span>
+                        <button id="spr-next-btn" class="spr-btn" type="button">Advance <kbd>Space</kbd></button>
+                    </div>
+                </div>
+
+                <!-- 2. Interactive A-Maze Task Demo -->
+                <div class="maze-demo-card">
+                    <div class="maze-header">
+                        <span class="maze-badge">Interactive Demo</span>
+                        <span class="maze-subtitle">A-Maze Paradigm</span>
+                    </div>
+                    <p class="maze-instructions">
+                        Click <strong>Start Task</strong>, then select the word that correctly continues the sentence using <kbd>F</kbd> (Left) / <kbd>J</kbd> (Right):
+                    </p>
+
+                    <!-- Word Selection Display -->
+                    <div class="maze-display">
+                        <!-- Start Button (visible before task starts) -->
+                        <button id="maze-start-btn" class="maze-start-btn" type="button">
+                            <i class="fa-solid fa-play"></i> Start Task
+                        </button>
+
+                        <!-- Choice Buttons (hidden until Start is clicked) -->
+                        <button id="maze-btn-left" class="maze-word-btn" type="button" style="display: none;">
+                            <span class="key-hint">Key F</span>
+                            <span id="maze-text-left" class="word-text"></span>
+                        </button>
+                        <button id="maze-btn-right" class="maze-word-btn" type="button" style="display: none;">
+                            <span class="key-hint">Key J</span>
+                            <span id="maze-text-right" class="word-text"></span>
+                        </button>
+                    </div>
+
+                    <div class="maze-controls">
+                        <span id="maze-timer" class="maze-timer">Click 'Start Task' to begin...</span>
+                        <button id="maze-reset-btn" class="maze-reset-btn" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    </div>
+                </div>
+
+                <!-- 3. Projects Grid -->
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="status-badge active">Active</span>
+                            <span class="project-tag">Sentence Processing</span>
+                        </div>
+                        <h3>A-maze versus Self-Paced Reading Paradigms: Capturing Individual Differences in Sentence Processing</h3>
+                        <p class="project-desc">Two widely used paradigms in sentence processing, A-maze and self-paced reading, have recently been used to investigate individual differences in sentence processing. This project aims to compare the reliability of each task across two testing sessions.</p>
+                        <div class="project-meta">
+                            <p><strong>Collaborators:</strong> Matt Robison, Department of Psychology at the University of Notre Dame</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="status-badge active">Active</span>
+                            <span class="project-tag">Associative Learning</span>
+                        </div>
+                        <h3>Raven Predicts Learning Rate in Associative Learning, but Not in Free Recall</h3>
+                        <p class="project-desc">Investigating the relationship between fluid intelligence and learning across three tasks.</p>
+                        <div class="project-meta">
+                            <p><strong>Collaborators:</strong> Matt Robison, Department of Psychology at the University of Notre Dame</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="status-badge active">Active</span>
+                            <span class="project-tag">Word Recognition</span>
+                        </div>
+                        <h3>Testing Predictive Effects of Distributed, Developmental Models of Word Recognition on Third-Grade Student Oral Reading Fluency (ORF) Error Profiles</h3>
+                        <p class="project-desc">Forthcoming...</p>
+                        <div class="project-meta">
+                            <p><strong>Lead Student:</strong> Natalie Gildea, CLAD Lab at the University of Notre Dame</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
     </div>
 
-  <!-- 2. Interactive A-Maze Task Demo -->
-<div class="maze-demo-card">
-    <div class="maze-header">
-        <span class="maze-badge">Interactive Demo</span>
-        <span class="maze-subtitle">A-Maze Paradigm</span>
-    </div>
-    <p class="maze-instructions">
-        Click <strong>Start Task</strong>, then select the word that correctly continues the sentence using <kbd>F</kbd> (Left) / <kbd>J</kbd> (Right):
-    </p>
-
-    <!-- Word Selection Display -->
-    <div class="maze-display">
-        <!-- Start Button (visible before task starts) -->
-        <button id="maze-start-btn" class="maze-start-btn">
-            <i class="fa-solid fa-play"></i> Start Task
-        </button>
-
-        <!-- Choice Buttons (hidden until Start is clicked) -->
-        <button id="maze-btn-left" class="maze-word-btn" style="display: none;">
-            <span class="key-hint">Key F</span>
-            <span id="maze-text-left" class="word-text"></span>
-        </button>
-        <button id="maze-btn-right" class="maze-word-btn" style="display: none;">
-            <span class="key-hint">Key J</span>
-            <span id="maze-text-right" class="word-text"></span>
-        </button>
-    </div>
-
-    <div class="maze-controls">
-        <span id="maze-timer" class="maze-timer">Click 'Start Task' to begin...</span>
-        <button id="maze-reset-btn" class="maze-reset-btn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-    </div>
-</div>
-
-    <!-- 3. Projects Grid -->
-    <div class="projects-grid">
-        <article class="project-card">
-            <div class="project-top">
-                <span class="status-badge active">Active</span>
-                <span class="project-tag">Sentence Processing</span>
-            </div>
-            <h3>A-maze versus Self-Paced Reading Paradigms: Capturing Individual Differences in Sentence Processing</h3>
-            <p class="project-desc">Two widely used paradigms in sentence processing, A-maze and self-paced reading, have recently been used to investigate individual differences in sentence processing. This project aims to compare the reliability of each task across two testing sessions.</p>
-            <div class="project-meta">
-                <p><strong>Collaborators:</strong> Matt Robison, Department of Psychology at the University of Notre Dame</p>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <div class="project-top">
-                <span class="status-badge active">Active</span>
-                <span class="project-tag">Associative Learning</span>
-            </div>
-            <h3>Raven Predicts Learning Rate in Associative Learning, but Not in Free Recall</h3>
-            <p class="project-desc">Investigating the relationship between fluid intelligence and learning across three tasks.</p>
-            <div class="project-meta">
-                <p><strong>Collaborators:</strong> Matt Robison, Department of Psychology at the University of Notre Dame</p>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <div class="project-top">
-                <span class="status-badge active">Active</span>
-                <span class="project-tag">Word Recognition</span>
-            </div>
-            <h3>Testing Predictive Effects of Distributed, Developmental Models of Word Recognition on Third-Grade Student Oral Reading Fluency (ORF) Error Profiles</h3>
-            <p class="project-desc">Forthcoming...</p>
-            <div class="project-meta">
-                <p><strong>Lead Student:</strong> Natalie Gildea, CLAD Lab at the University of Notre Dame</p>
-            </div>
-        </article>
-    </div>
-</section>
-</main>
-</section>
     <script src="js/main.js"></script>
 </body>
 </html>
